@@ -7,14 +7,23 @@ background-image: url('{{ url_for("static", filename="img/background.jpg") }}');
 height: 400px;
 "> -->
 <div class="p-5 text-center bg-image" style="
-background-image: url('https://images.unsplash.com/photo-1517976547714-720226b864c1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80');
+background-image: url('https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=913&q=80');
 height: 400px;
 ">
       <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
           <div class="d-flex justify-content-center align-items-center h-100">
-              <div class="text-white">
+              <!-- <div class="text-white">
                   <a class="btn btn-outline-light btn-lg" href="#" role="button">Counting Stars</a>
-              </div>
+              </div> -->
+              <form action="/searchMyLucky" method="POST" class="input-group m-3 w-50">
+                <div class="form-outline">
+                  <input type="search" id="form1" name="search_data" class="form-control text-white"/>
+                  <label class="form-label text-white" for="form1">이름과 생년월일을 입력해보세요 (ex. 김민구/1997.12.12)</label>
+                </div>
+                <button type="button" class="btn btn-primary">
+                  <i class="fas fa-search"></i>
+                </button>
+            </form>
           </div>
       </div>
   </div>
