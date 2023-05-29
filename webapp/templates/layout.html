@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <title>Counting Stars</title>
-    
+
     <!-- MDB icon -->
     <link rel="icon" href="{{ url_for('static', filename='img/new-icon.png') }}" type="image/x-icon" />
     <!-- Font Awesome -->
@@ -15,6 +15,7 @@
         href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" />
     <!-- MDB -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/mdb.min.css') }}" />
+    <link rel="stylesheet" href="../static/css/mypage.css">
     <style>
         hr {
             border: 0;
@@ -49,7 +50,7 @@
                     <!-- left menu -->
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item pe-2">
-                            <a class="nav-link" href="#">홈으로</a>
+                            <a class="nav-link" href="{{ url_for('index') }}">홈으로</a>
                         </li>
                         <li class="nav-item pe-2">
                             <a class="nav-link" href="#">일정</a>
@@ -67,17 +68,15 @@
                     <ul class="navbar-nav d-flex flex-row">
                         {% if session['user_email'] %}
                         <li class="nav-item me-3 me-lg-0">
-                            <a class="nav-link" href="#">마이페이지</a>
-                            <!-- <a class="nav-link" href="{{ url_for('admin_projects') }}">Visit Admin Panel</a> -->
+                            <a class="nav-link" href="{{ url_for('mypage')}}">마이페이지</a>
                         </li>
                         <li class="nav-item me-3 me-lg-0">
-                            <a class="nav-link" href="#">Logout</a>
-                            <!-- <a class="nav-link" href="{{ url_for('logout') }}">Logout</a> -->
+                            <a class="nav-link" href="{{ url_for('logout')}} ">Logout</a>
                         </li>
                         {% else %}
                         
                         <li class="nav-item me-3 me-lg-0">
-                            <a class="nav-link" href="#">Login</a>
+                            <a class="nav-link" href="{{ url_for('login') }}">Login</a>
                         </li>
                         {% endif %}
                     </ul>

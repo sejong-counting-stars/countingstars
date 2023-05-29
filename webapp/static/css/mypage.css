@@ -1,0 +1,46 @@
+.myProfile {
+    width: 100%;
+    height: auto;
+
+    min-width: 200px;
+    max-width: 500px;
+    max-height: 230px;
+    border-top-left-radius: 28px;
+    border-top-right-radius: 28px;
+}
+
+.profileBox {
+    border: 2px solid #073B4C;
+    border-radius: 30px;
+    
+    max-height: 395px;
+}
+
+.profile_text {
+    font-size: 20px;
+    font-weight: bold;
+    /* #073B4C */
+}
+
+.lucky_text {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.my_lucky_content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.p_content {
+    font-weight: bold;
+    font-size: 15px;
+
+    color: black;
+}
+
+.div_content {
+    display: flex;
+    align-items: center;
+}
