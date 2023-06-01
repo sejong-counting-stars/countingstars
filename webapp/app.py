@@ -29,15 +29,16 @@ def index():
     return render_template("home.html")
 
 @app.route('/schedule')
-def project():
+def schedule():
     all_projects = projects.find() # get all projects data
     all_projects_list = list(all_projects) # convert the data into list
     print(all_projects_list)
     return render_template("schedule.html", data=all_projects_list)
 
 
+
 @app.route('/scheduledetail/<id>')
-def Project_Detail(id):
+def schedule_Detail(id):
     # Convert from string to ObjectId:
     _id_converted = ObjectId(id)
     search_filter = {"_id": _id_converted} # _id is key and _id_converted is the converted _id
