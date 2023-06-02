@@ -16,6 +16,7 @@ animals_content = db.animal_content
 projects = db.project
 
 
+
 # Create the Flask application
 app = Flask(__name__)
 
@@ -27,6 +28,14 @@ app.secret_key = 'fad62b7c1a6a9e67dbb66c3571a23ff2425650965f80047ea2fadce543b088
 @app.route('/')
 def index():
     return render_template("home.html")
+
+@app.route('/map')
+def map():
+    return render_template("map.html")
+
+@app.route('/weather')
+def weather():
+    return render_template("weather.html")
 
 @app.route('/schedule')
 def schedule():

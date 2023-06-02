@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+  <div class="weather-container">
+    
+    <link rel="style" href="../static/css/style.css">
+    <h1>오늘의 날씨</h1>
+    <div class="weather-info">
+      <p>현재 위치: <span id="city"></span></p>
+      <p>날씨: <span id="weather"></span></p>
+      <p>온도: <span id="temperature"></span></p>
+      <p>관측상태: <span id="weather-status"></span></p>
+      <div id="weather-image">
+        <img src="" alt="Weather Image">
+      </div>
+      
+    </div>
+  </div>
+{% endblock %}
