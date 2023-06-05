@@ -67,27 +67,17 @@
                             <a class="nav-link" href="{{ url_for('schedule')}}">일정</a>
                         </li>
                         <li class="nav-item pe-2">
-                            <a class="nav-link" href="#">관측정보</a>
-                            <ul class="sub-tabs">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ url_for('weather')}}">오늘의 날씨</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ url_for('map')}}">관측소</a>
-                                </li>
+                            <a class="nav-link dropdown-toggle" data-mdb-toggle="dropdown" aria-expanded="false" href="#" >관측정보</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="{{ url_for('weather')}}">오늘의 날씨</a></li>
+                                <li><a class="dropdown-item" href="{{ url_for('map')}}">관측소</a></li>
                             </ul>
                         </li>
                         <li class="nav-item pe-2">
-                            <a class="nav-link" href="{{ url_for('homepage_faq') }}">질문게시판</a>
-                            <ul class="sub-tabs">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ url_for('homepage_submit')}}">
-                                        질문하기
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ url_for('homepage_bulletin')}}">질문목록</a>
-                                </li>
+                            <a class="nav-link dropdown-toggle" data-mdb-toggle="dropdown" aria-expanded="false" href="#">질문게시판</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="{{ url_for('homepage_faq')}}">FAQ</a></li>
+                                <li><a class="dropdown-item" href="{{ url_for('homepage_bulletin')}}">질문목록</a></li>
                             </ul>
                         </li>
                     </ul>
