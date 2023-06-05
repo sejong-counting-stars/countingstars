@@ -13,6 +13,8 @@ db = client["astro"] # use/create "webapp" database
 user_info = db.user
 stars_content = db.stars_content
 animals_content = db.animal_content
+submit_question_col=db.submit_question
+comment_col=db.comments
 projects = db.project
 
 
@@ -97,6 +99,7 @@ def mypage():
     #     search_filter = {"_id": _id_converted}
     #     userData = user_info.find_one(search_filter)
     #     return render_template("mypage.html", userData=userData)
+
 
 @app.route('/searchMyLucky', methods=['GET', 'POST'])
 def search_my_lucky():
@@ -217,6 +220,83 @@ def find_stars(month, day):
         return "사수자리"
     else:
         return "염소자리"
+
+@app.route('/homepage_faq')
+def homepage_faq():
+    return render_template("homepage_faq.html")
+
+
+@app.route('/homepage_submit',methods=['GET','POST'])
+def homepage_submit():
+    if request.method == 'POST':
+        name=request.form['name'].strip()
+        title=request.form['title'].strip()
+        category=request.form['category'].strip()
+        about=request.form['about'].strip()
+        
+        # prepare the key values to be stored
+        new_data = { 'name': name, 
+                    'title': title, 
+                    'category':category, 
+                    'about': about}
+
+        # run the query to save one contact data
+        submit_question_col.insert_one(new_data)
+
+        # # show the contact is received
+        # flash("The data has been successfully saved.")
+        return render_template("homepage_thankyou.html")
+    
+    return render_template("homepage_submit.html")
+
+
+@app.route('/homepage_bulletin')
+def homepage_bulletin():
+    bulletin_data=submit_question_col.find({}).sort("_id",-1)
+    bulletin_data_list=list(bulletin_data)
+    return render_template("homepage_bulletin.html",data=bulletin_data_list)
+
+
+@app.route('/homepage_thankyou')
+def homepage_thankyou():
+    return render_template("homepage_thankyou.html")
+
+
+@app.route('/panel_management')
+def panel_management():
+    return render_template("panel_management.html")
+
+
+@app.route('/panel_answer/<id>')
+def panel_answer(id):
+    post_data = ""
+    comment_data = ""
+    try:
+        _id_converted = ObjectId(id)
+        search_filter = {"_id": _id_converted} # _id is key and _id_converted is the converted _id
+        search_comment_filter = {"comment_id": id}
+        post_data = submit_question_col.find_one(search_filter) # get one post data matched with _id
+        comment_data = comment_col.find(search_comment_filter)
+        # comment_data = comment_col.find({})
+        print(comment_data)
+    except:
+        print("ID is not found/invalid")
+
+    return render_template("panel_answer.html", data=post_data, comment_data=comment_data)
+
+@app.route('/comment_submit/<comment_id>', methods=['GET','POST'])
+def comment_submit(comment_id):
+    if request.method == 'POST':
+        comment=request.form['comment'].strip()
+        new_comment_data = { 
+            'name': comment, 
+            'comment_id': comment_id
+        }
+        comment_col.insert_one(new_comment_data)
+
+        return redirect(url_for('panel_answer', id=comment_id))
+
+
 
 # put the following code at the end of 'app.py' script
 if __name__ == '__main__':

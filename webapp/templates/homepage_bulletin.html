@@ -1,0 +1,91 @@
+{% extends "layout.html" %}
+
+{% block content %}
+  
+      <!--함께 발전해가겠습니다 시작-->
+      <header>
+  
+          <!-- Background image -->
+  <div
+  class="p-5 text-center bg-image"
+  style="
+    background-image:  url('https://www.gohawaii.com/sites/default/files/hero-unit-images/12042.tif_.jpg');
+      height: 400px;
+    "
+  >
+    <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
+      <div class="d-flex justify-content-center align-items-center h-100">
+        <div class="text-white">
+          <h1 class="mb-3">Q&A</h3>
+          <h4 class="mb-3">고객님과 함께 발전해가는 'Counting Stars'가 되도록 하겠습니다</h3>
+            <button type="button" class="btn btn-light" data-mdb-ripple-color="dark">
+                <a href="#" onclick="location.href='/homepage_submit'">질문하기</a>
+            </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Background image -->
+
+        
+        <!--게시판 시작-->
+        <!--Main layout-->
+    <main style="margin-bottom: 200px">
+        <div class="container pt-4">
+
+            <!--Section: Manage Posts-->
+
+                    <div class="card-header py-3">
+                        <h1 class="mb-0 text-center">
+                            게시판
+                        </h1>
+                    </div>
+                    <br>
+                    
+                    <div class="card-body text-center">
+                        <div class="table-responsive">
+                            <table class="table table-hover text-nowrap">
+                                
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">Title</th>
+                                        <th scope="col">Category</th>
+                                        <th scope="col" >About</th>
+                                    </tr>
+                                </thead>
+                                {% for homepage_bulletin in data %}
+                                <tbody>
+                                    <tr>
+                                        
+                                        <th scope="row">{{homepage_bulletin.name | e}}</th>
+                                        <td><a href="{{ url_for('panel_answer', id=homepage_bulletin._id)}}">{{homepage_bulletin.title | e}}</a></td>
+                                        <td>{{homepage_bulletin.category | e}}</td>
+                                        <td>{{homepage_bulletin.about | e}}</td>
+                                        
+                                    </tr>
+                                </tbody>
+                               
+                                {%endfor%}
+                            </table>
+                        </div>
+                    </div>
+                    
+                </div>
+            </section>
+            <!--Section: Manage Contact-->
+
+        </div>
+    </main>
+    
+    <!--Main layout-->
+    <!-- 게시판 끝 -->
+  
+
+        <!--Footer 끝-->
+  
+        <!-- MDB -->
+      <!-- <script type="text/javascript" src="{{ url_for('static', filename='js/mdb.min.js') }}"></script> -->
+  
+{%endblock%}

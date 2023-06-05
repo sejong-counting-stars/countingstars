@@ -1,0 +1,78 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+    <!--Main layout-->
+    <main style="margin-top: 58px">
+        <div class="container pt-4">
+
+            <!--Section: Manage Posts-->
+            <section class="mb-4">
+                <div class="card">
+                    <div class="card-header py-3">
+                        <h5 class="mb-0 text-center">
+                            <strong>Manage uploads</strong>
+                        </h5>
+                    </div>
+                    <div class="card-body text-center">
+                        <div class="table-responsive">
+                            <table class="table table-hover text-nowrap">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">Title</th>
+                                        <th scope="col">Category</th>
+                                        <th scope="col">Image</th>
+                                        <th scope="col" colspan="3">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">Guest 1</th>
+                                        <td>title</td>
+                                        <td>category</td>
+                                        <td>image</td>
+                                        <td><a href="" class="btn btn-info">Read</a></td>
+                                        <td><button class="btn btn-secondary">
+                                            <a href="#" onclick="location.href='panel_answer.html'">Upload</a>
+                                        </button></td>
+                                        <td><button class="btn btn-danger">Delete</button></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Guest 2</th>
+                                        <td>title</td>
+                                        <td>category</td>
+                                        <td>image</td>
+                                        <td><a href="" class="btn btn-info">Read</a></td>
+                                        <td><button class="btn btn-secondary">
+                                            <a href="#" onclick="location.href='panel_answer.html'">Upload</a>
+                                        </button></td>
+                                        <td><button class="btn btn-danger">Delete</button></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Guest 3</th>
+                                        <td>title</td>
+                                        <td>category</td>
+                                        <td>image</td>
+                                        <td><a href="" class="btn btn-info">Read</a></td>
+                                        <td><button class="btn btn-secondary">
+                                            <a href="#" onclick="location.href='panel_answer.html'">Upload</a>
+                                        </button></td>
+                                        <td><button class="btn btn-danger">Delete</button></td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--Section: Manage Contact-->
+
+        </div>
+    </main>
+    <!--Main layout-->
+
+    <!-- End your project here-->
+
+{%endblock%}
