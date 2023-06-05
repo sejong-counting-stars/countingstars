@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    {% if data %}
+    <div class="card m-3">
+        <div class="card-body">
+        <h5 class="card-title">제목: {{data.title}}</h5>
+        <p class="card-text">내용: {{data.about}}</p>
+    </div>
+
+    <div class="form-outline m-3">
+        <form action="{{url_for('comment_submit', comment_id=data._id)}}", method="POST">
+            <textarea class="form-control" id="textAreaExample" rows="4" name="comment"></textarea>
+            <label class="form-label" for="textAreaExample">Message</label>
+            <button type="submit" class="btn btn-success" data-mdb-ripple-color="dark">
+                제출하기
+            </button>
+        </form>
+    </div>
+
+    {% if comment_data %}
+        {% for comment in comment_data %}
+            <div>{{ comment.name }}</div>
+        {%endfor%}
+    {% endif %}
+
+    {% endif %}
+
+    
+    
+{%endblock%}

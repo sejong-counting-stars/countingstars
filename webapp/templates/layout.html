@@ -78,7 +78,17 @@
                             </ul>
                         </li>
                         <li class="nav-item pe-2">
-                            <a class="nav-link" href="#">질문게시판</a>
+                            <a class="nav-link" href="{{ url_for('homepage_faq') }}">질문게시판</a>
+                            <ul class="sub-tabs">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ url_for('homepage_submit')}}">
+                                        질문하기
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ url_for('homepage_bulletin')}}">질문목록</a>
+                                </li>
+                            </ul>
                         </li>
                     </ul>
                     <!-- left menu -->

@@ -15,12 +15,12 @@ height: 400px;
               <!-- <div class="text-white">
                   <a class="btn btn-outline-light btn-lg" href="#" role="button">Counting Stars</a>
               </div> -->
-              <form action="/searchMyLucky" method="POST" class="input-group m-3 w-50">
+              <form action="{{ url_for('search_my_lucky') }}" method="POST" class="input-group m-3 w-50">
                 <div class="form-outline">
                   <input type="search" id="form1" name="search_data" class="form-control text-white"/>
                   <label class="form-label text-white" for="form1">이름과 생년월일을 입력해보세요 (ex. 김민구/1997.12.12)</label>
                 </div>
-                <button type="button" class="btn btn-primary">
+                <button type="submit" class="btn btn-primary">
                   <i class="fas fa-search"></i>
                 </button>
             </form>

@@ -1,0 +1,90 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+
+    <!--네비게이션 바 끝-->
+
+
+
+     <!--함께 발전해가겠습니다 시작-->
+<header>
+
+  <!-- Background image -->
+  <div
+    class="p-5 text-center bg-image"
+    style="
+      background-image:  url('https://www.gohawaii.com/sites/default/files/hero-unit-images/12042.tif_.jpg');
+        height: 400px;
+      "
+    >
+      <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
+        <div class="d-flex justify-content-center align-items-center h-100">
+          <div class="text-white">
+            <h1 class="mb-3">Q&A</h3>
+            <h4 class="mb-3">고객님과 함께 발전해가는 'Counting Stars'가 되도록 하겠습니다</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Background image -->
+</header>
+<!--함께 발전해나가겠습니다 끝-->
+
+    <!--Main layout-->
+    <main style="margin-top: 58x">
+        <div class="container pt-4">
+
+            <!--Section: Manage Settings-->
+            <section class="mb-4">
+                <div class="card">
+                    <div class="card-header py-3">
+                        <h5 class="mb-0 text-center">
+                            <strong>Q&A</strong>
+                        </h5>
+                    </div>
+                    <div class="card-body text-center">
+                        <!-- form -->
+                        <form action="{{url_for('homepage_submit')}}" method="POST">
+                            <div class="form-outline mb-4">
+                                <input type="text" id="name" name="name" 
+                                    class="form-control" />
+                                <label class="form-label" for="name">이름</label>
+                            </div>
+                            <!-- full title input -->
+                            <div class="form-outline mb-4">
+                                <input type="text" id="title" name="title" 
+                                    class="form-control" />
+                                <label class="form-label" for="title">제목</label>
+                            </div>
+
+                            <!-- website category input -->
+                            <div class="form-outline mb-4">
+                                <input type="text" id="category" name="category"
+                                     class="form-control" />
+                                <label class="form-label" for="category">카테고리</label>
+                            </div>
+
+                            <!-- about me -->
+                            <div class="form-outline mb-4">
+                                <textarea class="form-control" id="about" name="about" type="text"
+                                    rows="10" ></textarea>
+                                <label class="form-label" for="about">질문</label>
+                            </div>
+
+
+                            <!-- Submit button -->
+                            <button type="submit" class="btn btn-light" data-mdb-ripple-color="dark">
+                                제출하기
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+            <!--Section: Manage Settings-->
+
+        </div>
+    </main>
+    <!--Main layout-->
+
+{%endblock%}
