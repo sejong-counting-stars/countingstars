@@ -47,7 +47,6 @@ def schedule():
     return render_template("schedule.html", data=all_projects_list)
 
 
-
 @app.route('/scheduledetail/<id>')
 def schedule_Detail(id):
     # Convert from string to ObjectId:
