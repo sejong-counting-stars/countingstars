@@ -1,60 +1,110 @@
 {% extends "layout.html" %}
 
 {% block content %}
-<div class="d-flex">
-    <div class="d-flex flex-column justify-content-center m-3 profileBox">
-        <div>
-            <img src="https://images.unsplash.com/photo-1505506874110-6a7a69069a08?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80" class="myProfile" alt="">
+<div class="d-flex flex-column">
+    <div class="d-flex">
+        <div class="d-flex flex-column justify-content-center m-3 profileBox">
+            <div>
+                <img src="https://images.unsplash.com/photo-1505506874110-6a7a69069a08?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80" class="myProfile" alt="">
+            </div>
+            <div class="m-3">
+                <div class="profile_text">
+                    <i class="fas fa-user-astronaut"></i>
+                    {{ name_data }}님
+                </div>
+                <div class="profile_text">
+                    <i class="fas fa-puzzle-piece"></i>
+                    {{ animal }}띠
+                </div>
+                <div class="profile_text">
+                    <i class="fas fa-cake-candles"></i>
+                    {{ birth_data }}년생
+                </div>
+                <div class="profile_text">
+                    <i class="fas fa-meteor"></i>
+                    {{ star }}
+                </div>
+            </div>
         </div>
-        <div class="m-3">
-            <div class="profile_text">
-                <i class="fas fa-user-astronaut"></i>
-                {{ name_data }}님
+        <div class="d-flex mb-3 flex-column m-3">
+            <div>
+                <label for="" class="lucky_text">
+                    <i class="fas fa-circle-check"></i>
+                    {{ name_data }}님의 오늘의 운세는 어떨까요?
+                </label>
+                <div class="container-lg text-white p-1 m-2 rounded shadow-2-primary" style="background-color: #DEE2E6">
+                    <p class="p_content">{{today_luck_content}}</p>
+                </div>
             </div>
-            <div class="profile_text">
-                <i class="fas fa-puzzle-piece"></i>
-                {{ animal }}띠
+            <div>
+                <label for="" class="lucky_text">
+                    <i class="fas fa-circle-check"></i>
+                    {{ star }}를 바탕으로한 사주는 어떨까요?
+                </label>
+                <div class="container-lg text-white p-1 m-2 rounded shadow-2-secondary" style="background-color: #DEE2E6">
+                    <p class="p_content">{{ star_content }}</p>
+                </div>
+
             </div>
-            <div class="profile_text">
-                <i class="fas fa-cake-candles"></i>
-                {{ birth_data }}년생
-            </div>
-            <div class="profile_text">
-                <i class="fas fa-meteor"></i>
-                {{ star }}
+            <div>
+                <label for="" class="lucky_text">
+                    <i class="fas fa-circle-check"></i>
+                    {{ animal }}띠의 오늘의 운세는 어떨까요?
+                </label>
+                <div class="container-lg text-white p-1 m-2 rounded shadow-2-soft" style="background-color: #DEE2E6">
+                    <p class="p_content">{{ animal_content }}</p>
+                </div>
+
             </div>
         </div>
     </div>
-    <div class="d-flex mb-3 flex-column m-3">
-        <div>
-            <label for="" class="lucky_text">
-                <i class="fas fa-circle-check"></i>
-                {{ name_data }}님의 오늘의 운세는 어떨까요?
-            </label>
-            <div class="container-lg text-white p-1 m-2 rounded shadow-2-primary" style="background-color: #DEE2E6">
-                <p class="p_content">사소한 문제가 일어날 수 있지만, 그 일에 대해서 당황할 필요는 없다. 당신의 주머니가 지금 텅 비어 있어도 겁먹을 필요 없다. 구하면 길이 생겨날 것이다. 자신감을 가져라.</p>
-            </div>
-        </div>
-        <div>
-            <label for="" class="lucky_text">
-                <i class="fas fa-circle-check"></i>
-                {{ star }}를 바탕으로한 사주는 어떨까요?
-            </label>
-            <div class="container-lg text-white p-1 m-2 rounded shadow-2-secondary" style="background-color: #DEE2E6">
-                <p class="p_content">{{ star_content }}</p>
-            </div>
 
-        </div>
-        <div>
-            <label for="" class="lucky_text">
-                <i class="fas fa-circle-check"></i>
-                {{ animal }}띠의 오늘의 운세는 어떨까요?
-            </label>
-            <div class="container-lg text-white p-1 m-2 rounded shadow-2-soft" style="background-color: #DEE2E6">
-                <p class="p_content">{{ animal_content }}</p>
+    <div>
+        <!--카테고리 간략한 소개 시작-->
+        <h1 class="text-center">당신을 위한 명언.</h1>
+        <div class="row p-5">
+          <!--일정-->
+          <div class="card" style="width: 15rem;">
+            <div class="card-body">
+              <h5 class="card-title">인생</h5>
+              <h6 class="card-subtitle mb-2 text-muted">Ben Stein</h6>
+              <p class="card-text">인생에서 원하는 것을 얻기 위한 첫 번째 단계는 내가 무엇을 원하는지 결정하는 것이다</p>
             </div>
-
+          </div>
+          &nbsp; &nbsp; &nbsp; &nbsp;
+  
+          <!--천체-->
+          <div class="card" style="width: 15rem;">
+            <div class="card-body">
+              <h5 class="card-title">도전</h5>
+              <h6 class="card-subtitle mb-2 text-muted">Herodotus</h6>
+              <p class="card-text">위대한 업적은 대개 커다란 위험을 감수한 결과이다.</p>
+            </div>
+          </div>
+          &nbsp; &nbsp; &nbsp; &nbsp;
+  
+          <!--관측-->
+          <div class="card" style="width: 15rem;">
+            <div class="card-body">
+              <h5 class="card-title">희망</h5>
+              <h6 class="card-subtitle mb-2 text-muted">Jay Leno</h6>
+              <p class="card-text">당신을 웃게 만드는 이에게 화를 낼 수는 없어요. 그만큼 단순한 거예요</p>
+            </div>
+          </div>
+          &nbsp; &nbsp; &nbsp; &nbsp;
+  
+          <!--about us-->
+          <div class="card" style="width: 15rem;">
+            <div class="card-body">
+              <h5 class="card-title">자신감</h5>
+              <h6 class="card-subtitle mb-2 text-muted">Oscar Levant</h6>
+              <p class="card-text">천재와 광인사이에는 아주 가느다란 선이 있다. 나는 이 선을 지웠다.</p>
+            </div>
+            &nbsp; &nbsp; &nbsp; &nbsp;
+          </div>
         </div>
+  
+        <!--카테고리 간략한 소개 끝-->
     </div>
 </div>
 

@@ -15,6 +15,7 @@ stars_content = db.stars_content
 animals_content = db.animal_content
 submit_question_col=db.submit_question
 comment_col=db.comments
+lucky_content = db.lucky
 projects = db.project
 
 
@@ -81,9 +82,16 @@ def mypage():
         # search_filter = {"_id": _id_converted}
         # userData = user_info.find_one(search_filter)
         userData = user_info.find_one({"email": session.get('user_email')})
+
+        birth = userData['birth'].split('.')
+        year = birth[0]
+        month = birth[1]
+        day = birth[2]
+
         star_content = find_star_content(userData['star']) # 유저의 별자리에 맞는 내용 반환.
         animal_content = find_animal_content(userData['animal'])
-        return render_template("mypage.html", userData=userData, star_content=star_content[0], animal_content=animal_content[0], animal_icon = "fa-dragon")
+        today_luck_content = find_today_my_lucky_content(year, month, day)
+        return render_template("mypage.html", userData=userData, star_content=star_content[0], animal_content=animal_content[0], today_luck_content=today_luck_content, animal_icon = "fa-dragon")
     else:
         # if logged in
         user_email = session.get('user_email')
@@ -108,9 +116,10 @@ def search_my_lucky():
         animal, star = find_temporary_user_data(birth_day) # 생년월일에따른 별자리와 띠 찾아주는 함수
         star_content = find_star_content(star) # 별자리에 맞는 운세 반횐
         animal_content = find_animal_content(animal) # 띠에 맞는 운세 반환
+        today_luck_content = find_today_lucky_content(birth_day)
         print(animal, star)
 
-    return render_template("mylucky.html", name_data=name, birth_data=birth_day, animal=animal, star=star, star_content=star_content[0], animal_content=animal_content[0])
+    return render_template("mylucky.html", name_data=name, birth_data=birth_day, animal=animal, star=star, star_content=star_content[0], animal_content=animal_content[0], today_luck_content=today_luck_content)
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -163,6 +172,27 @@ def find_star_content(star):
         cnt += 1
     
     return content
+
+# 오늘의 운세
+def find_today_lucky_content(birth_day):
+    year, month, day = birth_day.split('.')
+    year = int(year)
+    month = int(month)
+    day = int(day)
+
+    data = lucky_content.find({})
+    idx = (year + month + day) % 36
+
+    return data[idx]['lucky']
+
+def find_today_my_lucky_content(year, month, day):
+    year = int(year)
+    month = int(month)
+    day = int(day)
+    data = lucky_content.find({})
+    idx = (year + month + day) % 36
+
+    return data[idx]['lucky']
 
 def find_animal_content(animal):
     data = animals_content.find({"animal": animal})
