@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<section class="p-5 text-center bg-image m-5" style="
+background-image: url('https://wallpaperswide.com/download/outrun-wallpaper-3200x1200.jpg');
+height: 450px;
+border-radius: 30px;
+">
+    <div class="d-flex justify-content-center align-items-center h-100">
+        <div class="col-md-6">
+            <form action="{{ url_for('login') }}" method="POST">
+                <!-- Email input -->
+                <div class="form-outline mb-4">
+                  <input type="email" name="email" id="form1Example1" class="form-control text-white" />
+                  <label class="form-label text-white" for="form1Example1">이메일</label>
+                </div>
+              
+                <!-- Password input -->
+                <div class="form-outline mb-4">
+                  <input type="password" name="password" id="form1Example2" class="form-control text-white" />
+                  <label class="form-label text-white" for="form1Example2">비밀번호</label>
+                </div>
+              
+                <!-- Submit button -->
+                <button type="submit" class="btn btn-primary btn-block">로그인</button>
+              </form>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

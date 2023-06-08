@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    
+     <!--함께 발전해가겠습니다 시작-->
+<header>
+
+  <!-- Background image -->
+  <div
+    class="p-5 text-center bg-image"
+    style="
+      background-image:  url('https://www.gohawaii.com/sites/default/files/hero-unit-images/12042.tif_.jpg');
+        height: 400px;
+      "
+    >
+      <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
+        <div class="d-flex justify-content-center align-items-center h-100">
+          <div class="text-white">
+            <h1 class="mb-3">Q&A</h3>
+            <h4 class="mb-3">고객님과 함께 발전해가는 'Counting Stars'가 되도록 하겠습니다</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Background image -->
+</header>
+<!--함께 발전해나가겠습니다 끝-->
+
+<br>
+<h1 class="mb-3 text-center">제출이 완료되었습니다.</h1>
+<br>
+
+<!--버튼1 시작-->
+<main style="margin-bottom: 200px">
+<div class="row justify-content-evenly">
+    <div>
+      <center>
+        <button type="button" class="btn btn-light" data-mdb-ripple-color="dark">
+          <a href="{{ url_for('homepage_bulletin') }}">목록으로 돌아가기</a>
+        </button>
+      </center>
+    </div>
+</main>
+
+{%endblock%}

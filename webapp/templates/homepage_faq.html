@@ -1,0 +1,162 @@
+{% extends "layout.html" %}
+
+{% block content %}
+  
+      <!--함께 발전해가겠습니다 시작-->
+      <header>
+  
+          <!-- Background image -->
+  <div
+  class="p-5 text-center bg-image"
+  style="
+    background-image:  url('https://www.gohawaii.com/sites/default/files/hero-unit-images/12042.tif_.jpg');
+      height: 400px;
+    "
+  >
+    <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
+      <div class="d-flex justify-content-center align-items-center h-100">
+        <div class="text-white">
+          <h1 class="mb-3">Q&A</h3>
+          <h4 class="mb-3">고객님과 함께 발전해가는 'Counting Stars'가 되도록 하겠습니다</h3>
+              <a href="{{ url_for('homepage_submit') }}" class="btn btn-light">질문하기</a>
+              <a href="{{ url_for('homepage_bulletin') }}" class="btn btn-light">질문보러가기</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Background image -->
+
+        </header>
+        <!--함께 발전해나가겠습니다 끝-->
+  
+        <br>
+  
+        <!--카테고리 간략한 소개 시작-->
+        <h1 class="text-center">카테고리</h1>
+        <div class="row p-5">
+          <!--일정-->
+          <div class="card" style="width: 15rem;">
+            <div class="card-body">
+              <h5 class="card-title">일정</h5>
+              <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+              <p class="card-text">우주와 관련된 일정 및 우주와 관련된 뉴스</p>
+            </div>
+          </div>
+          &nbsp; &nbsp; &nbsp; &nbsp;
+  
+          <!--천체-->
+          <div class="card" style="width: 15rem;">
+            <div class="card-body">
+              <h5 class="card-title">천체</h5>
+  
+              <p class="card-text">우주천체(ex. 별, 행성, 위성, 소행성, 성운 등)에 관한 사항</p>
+            </div>
+          </div>
+          &nbsp; &nbsp; &nbsp; &nbsp;
+  
+          <!--관측-->
+          <div class="card" style="width: 15rem;">
+            <div class="card-body">
+              <h5 class="card-title">관측</h5>
+              <p class="card-text">관측 방법, 관측 장비, 관측 환경 등에 관한 사항</p>
+            </div>
+          </div>
+          &nbsp; &nbsp; &nbsp; &nbsp;
+  
+          <!--about us-->
+          <div class="card" style="width: 15rem;">
+            <div class="card-body">
+              <h5 class="card-title">about us</h5>
+              <p class="card-text">'Counting Stars'에 관해 궁금한 사항</p>
+            </div>
+            &nbsp; &nbsp; &nbsp; &nbsp;
+          </div>
+        </div>
+  
+        <!--카테고리 간략한 소개 끝-->
+
+        
+        <!--FAQ 시작-->
+        <h1 class="text-center">FAQ</h1>
+        <br>
+         <!--일정 FAQ-->
+         <h4>일정</h4>
+         <div class="row" style="text-align:center">
+             <div class="col-6 col-md-4">
+  
+                  <i class="far fa-circle-question"></i>
+                  누리호가 발사연기가 된 이유는 무엇인가요?
+                
+             </div>
+             <div class="col-md-8">
+                 <i class="fas fa-angle-right"></i>
+                 인간이 육안으로 볼 수 있는 별은 겉보기 6등급 별까지인데  6등급까지의 별의 수는 약 6천개 정도됨.
+                 그런데 우리는 북반구에 살고 낮엔 별을 볼 수 없으므로 이 6천개의 절반 즉 3천개를 볼 수 있는데 
+                 그나마도  광공해 때문에 웬만한 지역에서 육안으로 볼 수 있는 별은 약 1천개정도 밖에 안됨.
+             </div>
+         </div>
+        <br>
+  
+  
+         <!--천체 FAQ-->
+         <h4>천체</h4>
+         <div class="row" style="text-align:center">
+             <div class="col-6 col-md-4">
+                 <i class="far fa-circle-question"></i>
+                 명왕성이 행성에서 퇴출된 이유는 무엇인가요?
+             </div>
+             <div class="col-md-8">
+                 <i class="fas fa-angle-right"></i>
+                 명왕성이 퇴출 당한 데는 여러가지 이유가 있는데 첫 번째 이유는 크기가 작기 때문입니다.
+                 크기가 달만큼 된다고 여겨졌던 명왕성의 실제 크기가 달의 2/3이라는 사실이 밝혀집니다.
+                 두 번째, 명왕성의 위성 중 하나인 '카론'과의 관계도 이상하기 때문입니다. 명왕성과 카론은 보통의
+                 행성과 위성과 달리 서로가 서로를 공전합니다.
+                 카이퍼 벨트에서 명왕성보다 더 큰 천체가 발견되면서 명왕성은 '왜소행성'으로 분류됩니다.
+             </div>
+         </div>
+        <br>
+  
+  
+         <!--관측 FAQ-->
+         <h4>관측</h4>
+         <div class="row" style="text-align:center">
+             <div class="col-6 col-md-4">
+                 <i class="far fa-circle-question"></i>
+                 육안으로 관찰할 수 있는 천체의 수는 몇 개인가요?
+             </div>
+             <div class="col-md-8">
+                 <i class="fas fa-angle-right"></i>
+                 인간이 육안으로 볼 수 있는 별은 겉보기 6등급 별까지인데  6등급까지의 별의 수는 약 6천개 정도됨.
+                 그런데 우리는 북반구에 살고 낮엔 별을 볼 수 없으므로 이 6천개의 절반 즉 3천개를 볼 수 있는데 
+                 그나마도  광공해 때문에 웬만한 지역에서 육안으로 볼 수 있는 별은 약 1천개정도 밖에 안됨.
+             </div>
+         </div>
+        <br>
+  
+         <!--About us FAQ-->
+         <h4>About us</h4>
+         <div class="row" style="text-align:center">
+             <div class="col-6 col-md-4">
+                 <i class="far fa-circle-question"></i>
+                 육안으로 관찰할 수 있는 천체의 수는 몇 개인가요?
+             </div>
+             <div class="col-md-8">
+                 <i class="fas fa-angle-right"></i>
+                 인간이 육안으로 볼 수 있는 별은 겉보기 6등급 별까지인데  6등급까지의 별의 수는 약 6천개 정도됨.
+                 그런데 우리는 북반구에 살고 낮엔 별을 볼 수 없으므로 이 6천개의 절반 즉 3천개를 볼 수 있는데 
+                 그나마도  광공해 때문에 웬만한 지역에서 육안으로 볼 수 있는 별은 약 1천개정도 밖에 안됨.
+             </div>
+         </div>
+        <br>
+  
+        <!--FAQ 시작-->
+
+  
+        <!-- MDB -->
+      <!-- <script type="text/javascript" src="{{ url_for('static', filename='js/mdb.min.js') }}"></script> -->
+
+{%endblock%}
+  
+  
+

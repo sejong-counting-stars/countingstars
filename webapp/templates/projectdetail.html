@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+  <div id="preview" class="preview">
+    <div style="display: none;"></div>
+    <div>
+      <div data-draggable="true" class="" style="position: relative;" draggable="false">
+        <!-- -->
+        <!-- -->
+        <section draggable="false" class="container pt-5" data-v-271253ee="">
+          <section class="mb-10 text-center text-lg-start">
+            <style>
+              .cascading-right {
+                margin-right: -50px;
+              }
+              @media (max-width: 991.98px) {
+                .cascading-right {
+                  margin-right: 0;
+                }
+              }
+            </style>
+            <!-- Jumbotron -->
+            <div class="container py-4">
+              <div class="row g-0 align-items-center">
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                  <div class="card cascading-right" style="background: hsla(0, 0%, 100%, 0.55); backdrop-filter: blur(30px);">
+                    <div class="card-body py-5 px-md-5 shadow-5">
+                      <h2 class="fw-bold mb-4">{{ data.title  | e}}&nbsp;</h2>
+                      <p class="text-muted mb-4">관측시간: {{ data.time  | e}}&nbsp;</p>
+                      <p class="text-muted mb-4">관측방향: {{ data.place  | e}}&nbsp;</p>
+                      <div class="row mb-3">
+                        <div class="col-lg-4">
+                          
+                            <i class="fas fa-check-circle text-dark me-2"></i><span>구름없는</span>
+                          </p>
+                        </div>
+                        <div class="col-lg-4">
+                          <p>
+                            <i class="fas fa-check-circle text-dark me-2"></i><span>달빛없는</span>
+                          </p>
+                        </div>
+                        <div class="col-lg-4">
+                          <p>
+                            <i class="fas fa-check-circle text-dark me-2"></i><span>높은 곳</span>
+                          </p>
+                        </div>
+                      </div>
+                      <p class="text-muted mb-0">{{ data.content  | e}}&nbsp;</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                  <img src="{{url_for('static', filename='img/'+data.picture)}}" class="w-100 rounded-4 shadow-4" alt="" aria-controls="#picker-editor" draggable="false">
+   </div> </div> </div> <!-- Jumbotron --> </section></section><!----></div></div></div>
+
+{% endblock %}

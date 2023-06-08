@@ -1,0 +1,130 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="d-flex flex-column">
+    <div class="d-flex">
+        <div class="d-flex flex-column justify-content-center m-3 profileBox">
+            <div>
+                <img src={{userData.photo}} class="myProfile" alt="">
+            </div>
+            <div class="m-3">
+                <div class="profile_text">
+                    <i class="fas fa-user-astronaut"></i>
+                    {{userData.name}}님
+                </div>
+                <div class="profile_text">
+                    <i class="fas fa-disease"></i>
+                    {{userData.animal}}띠
+                </div>
+                <div class="profile_text">
+                    <i class="fas fa-cake-candles"></i>
+                    {{userData.birth}}년생
+                </div>
+                <div class="profile_text">
+                    <i class="fas fa-meteor"></i>
+                    {{userData.star}}
+                </div>
+            </div>
+        </div>
+        <div class="d-flex mb-3 flex-column m-3">
+            <div>
+                <label for="" class="lucky_text">
+                    <i class="fas fa-circle-check"></i>
+                    {{userData.name}}님의 오늘의 운세는 어떨까요?
+                </label>
+                <div class="container-lg text-white p-1 m-2 rounded shadow-2-primary" style="background-color: #DEE2E6">
+                    <p class="p_content">{{today_luck_content}}</p>
+    
+                </div>
+            </div>
+            <div>
+                <label for="" class="lucky_text">
+                    <i class="fas fa-circle-check"></i>
+                    {{userData.star}}를 바탕으로한 사주는 어떨까요?
+                </label>
+                <div class="container-lg text-white p-1 m-2 rounded shadow-2-secondary" style="background-color: #DEE2E6">
+                    <p class="p_content">{{ star_content }}</p>
+                </div>
+    
+            </div>
+            <div>
+                <label for="" class="lucky_text">
+                    <i class="fas fa-circle-check"></i>
+                    {{userData.animal}}띠의 오늘의 운세는 어떨까요?
+                </label>
+                <div class="container-lg text-white p-1 m-2 rounded shadow-2-soft" style="background-color: #DEE2E6">
+                    <p class="p_content">{{ animal_content }}</p>
+                </div>
+    
+            </div>
+        </div>
+    </div>
+    <div>
+        <!--카테고리 간략한 소개 시작-->
+        <h1 class="text-center">당신을 위한 명언.</h1>
+        <div class="row p-5">
+          <!--일정-->
+          <div class="card" style="width: 15rem;">
+            <div class="card-body">
+              <h5 class="card-title">인생</h5>
+              <h6 class="card-subtitle mb-2 text-muted">Ben Stein</h6>
+              <p class="card-text">인생에서 원하는 것을 얻기 위한 첫 번째 단계는 내가 무엇을 원하는지 결정하는 것이다</p>
+            </div>
+          </div>
+          &nbsp; &nbsp; &nbsp; &nbsp;
+  
+          <!--천체-->
+          <div class="card" style="width: 15rem;">
+            <div class="card-body">
+              <h5 class="card-title">도전</h5>
+              <h6 class="card-subtitle mb-2 text-muted">Herodotus</h6>
+              <p class="card-text">위대한 업적은 대개 커다란 위험을 감수한 결과이다.</p>
+            </div>
+          </div>
+          &nbsp; &nbsp; &nbsp; &nbsp;
+  
+          <!--관측-->
+          <div class="card" style="width: 15rem;">
+            <div class="card-body">
+              <h5 class="card-title">희망</h5>
+              <h6 class="card-subtitle mb-2 text-muted">Jay Leno</h6>
+              <p class="card-text">당신을 웃게 만드는 이에게 화를 낼 수는 없어요. 그만큼 단순한 거예요</p>
+            </div>
+          </div>
+          &nbsp; &nbsp; &nbsp; &nbsp;
+  
+          <!--about us-->
+          <div class="card" style="width: 15rem;">
+            <div class="card-body">
+              <h5 class="card-title">자신감</h5>
+              <h6 class="card-subtitle mb-2 text-muted">Oscar Levant</h6>
+              <p class="card-text">천재와 광인사이에는 아주 가느다란 선이 있다. 나는 이 선을 지웠다.</p>
+            </div>
+            &nbsp; &nbsp; &nbsp; &nbsp;
+          </div>
+        </div>
+  
+        <!--카테고리 간략한 소개 끝-->
+    </div>
+</div>
+
+<!-- <div class="d-flex justify-content-around align-items-center">
+    <div class="d-flex">
+        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80" class="img-fluid rounded w-100 mh-80 p-3" alt="">
+    </div>
+    <div class="d-flex flex-column mb-3 flex-grow-1">
+        <div class="container-lg text-white p-1 m-2 rounded bg-image hover-zoom" style="background-image: url('https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=874&q=80');">
+            <h3>김민구님의 생일 별자리는 다음과 같아요!</h3>
+            <p>주변의 인정을 받게 되는 날입니다. 상사와 동료에게 자신의 능력을 인정받게 됩니다. 겸손한 태도만 유지한다면 자신의 위치를 더욱 확고히 할 수 있습니다. 자신이 생각했던 대로 일을 진행시키는 데 있어 조금은 여유로운 태도를 가지고 임하는 것이 좋습니다.</p>
+        </div>
+        <div class="container-lg text-white p-1 m-2 rounded bg-image hover-zoom" style="background-image: url('https://images.unsplash.com/photo-1530634693970-4f30bb329de4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1951&q=80');">
+            <h3>별자리를 바탕으로한 사주는 어떨까요?</h3>
+            <p>사소한 문제가 일어날 수 있지만, 그 일에 대해서 당황할 필요는 없다. 당신의 주머니가 지금 텅 비어 있어도 겁먹을 필요 없다. 구하면 길이 생겨날 것이다. 자신감을 가져라.</p>
+        </div>
+        <div class="container-lg text-white p-1 m-2 rounded bg-image hover-zoom" style="background-image: url('https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=974&q=80');">
+            <h3>재밌는 오늘의 운세보고 가세요!</h3>
+            <p>번거로운 일이더라도 어설프게 일에 대한 마무리를 하지 말고 확실하게 정리하는 게 내일을 위해서도 좋다. 지병이 조금씩 회복될 기미가 보이니 포기하지 말고 꾸준하게 치료하는 게 좋다.</p>
+        </div>
+    </div>
+</div> -->
+{% endblock %}

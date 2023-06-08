@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+{% block jumbotron %}
+
+<!-- jumbotron -->
+<!-- <div class="p-5 text-center bg-image" style="
+background-image: url('{{ url_for("static", filename="img/background.jpg") }}');
+height: 400px;
+"> -->
+<div class="p-5 text-center bg-image" style="
+background-image: url('https://images.unsplash.com/photo-1682685795557-976f03aca7b2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=871&q=80');
+height: 550px;
+">
+      <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
+          <div class="d-flex justify-content-center align-items-center h-100">
+              <!-- <div class="text-white">
+                  <a class="btn btn-outline-light btn-lg" href="#" role="button">Counting Stars</a>
+              </div> -->
+              <form action="{{ url_for('search_my_lucky') }}" method="POST" class="input-group m-3 w-50">
+                <div class="form-outline">
+                  <input type="search" id="form1" name="search_data" class="form-control text-white input-group-lg"/>
+                  <label class="form-label text-white" for="form1">이름과 생년월일을 입력해보세요 (ex. 김민구/1997.12.12)</label>
+                </div>
+                <button type="submit" class="btn btn-primary">
+                  <i class="fas fa-search"></i>
+                </button>
+            </form>
+          </div>
+      </div>
+  </div>
+  <!-- jumbotron -->
+
+{% endblock %}
+{% block content %}
+    
+{% endblock %}
