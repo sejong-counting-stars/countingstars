@@ -48,7 +48,7 @@ function updateWeatherInfo(weatherDescription) {
   var weatherStatus = "";
 
   if (lowerCaseDescription.includes("clear") || lowerCaseDescription.includes("sunny")) {
-    imageSrc = "webapp/static/img/clear.png"; // 맑은 날씨 이미지 파일 경로
+    imageSrc = "static/img/clear.png"; // 맑은 날씨 이미지 파일 경로
     weatherStatus = "하늘이 깨끗해 잘 보일겁니다.";
   } else if (
     lowerCaseDescription.includes("cloud") ||
@@ -56,21 +56,21 @@ function updateWeatherInfo(weatherDescription) {
     lowerCaseDescription.includes("fog") ||
     lowerCaseDescription.includes("haze")
   ) {
-    imageSrc = ""; // 흐린 날씨 이미지 파일 경로
+    imageSrc = "static/img/cloudy.png"; // 흐린 날씨 이미지 파일 경로
     weatherStatus = "날이 좋지 않아 관측에 어려움이 있을겁니다.";
   } else if (
     lowerCaseDescription.includes("mist") ||
     lowerCaseDescription.includes("rain")
   ) {
-    imageSrc = "webapp/static/img/mist.png"; // 비오는 날씨 이미지 파일 경로
+    imageSrc = "static/img/mist.png"; // 비오는 날씨 이미지 파일 경로
     weatherStatus = "날이 좋지 않아 관측에 어려움이 있을겁니다.";
   } else if (
     lowerCaseDescription.includes("snow")
   ) {
-    imageSrc = "갈매기/snow.png"; // 눈오는 날씨 이미지 파일 경로
+    imageSrc = "static/img/snow.png"; // 눈오는 날씨 이미지 파일 경로
     weatherStatus = "날이 좋지 않아 관측에 어려움이 있을겁니다.";
   }else {
-    imageSrc = "갈매기/default.png"; // 기본 이미지 파일 경로
+    imageSrc = "static/img/default.png"; // 기본 이미지 파일 경로
     weatherStatus = "날이 좋지 않아 관측에 어려움이 있을겁니다.";
   }
 
