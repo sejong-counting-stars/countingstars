@@ -1,4 +1,5 @@
 {% extends "layout.html" %}
+
 {% block content %}
 
   <div id="preview" class="preview">
@@ -25,7 +26,7 @@
                 <div class="col-lg-6 mb-5 mb-lg-0">
                   <div class="card cascading-right" style="background: hsla(0, 0%, 100%, 0.55); backdrop-filter: blur(30px);">
                     <div class="card-body py-5 px-md-5 shadow-5">
-                      <h2 class="fw-bold mb-4">이름: {{ data.title  | e}}&nbsp;</h2>
+                      <h2 class="fw-bold mb-4">{{ data.title  | e}}&nbsp;</h2>
                       <p class="text-muted mb-4">관측시간: {{ data.time  | e}}&nbsp;</p>
                       <p class="text-muted mb-4">관측방향: {{ data.place  | e}}&nbsp;</p>
                       <div class="row mb-3">
@@ -45,11 +46,12 @@
                           </p>
                         </div>
                       </div>
-                      <p class="text-muted mb-0">{{ data.content  | e}}&nbsp;<div><br></div><div><br></div><div><br></div><div><br></div><div><br></div><div><br></div><div><br></div></p>
+                      <p class="text-muted mb-0">{{ data.content  | e}}&nbsp;</p>
                     </div>
                   </div>
                 </div>
                 <div class="col-lg-6 mb-5 mb-lg-0">
                   <img src="{{url_for('static', filename='img/'+data.picture)}}" class="w-100 rounded-4 shadow-4" alt="" aria-controls="#picker-editor" draggable="false">
    </div> </div> </div> <!-- Jumbotron --> </section></section><!----></div></div></div>
-  {% endblock %}
+
+{% endblock %}

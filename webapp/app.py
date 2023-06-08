@@ -40,22 +40,22 @@ def map():
 def weather():
     return render_template("weather.html")
 
-@app.route('/schedule')
-def schedule():
+@app.route('/project')
+def project():
     all_projects = projects.find() # get all projects data
     all_projects_list = list(all_projects) # convert the data into list
     print(all_projects_list)
-    return render_template("schedule.html", data=all_projects_list)
+    return render_template("project.html", data=all_projects_list)
 
 
-@app.route('/scheduledetail/<id>')
-def schedule_Detail(id):
+@app.route('/projectdetail/<id>')
+def Project_Detail(id):
     # Convert from string to ObjectId:
     _id_converted = ObjectId(id)
     search_filter = {"_id": _id_converted} # _id is key and _id_converted is the converted _id
     project_data = projects.find_one(search_filter) # get one project data matched with _id
     
-    return render_template("scheduledetail.html", data=project_data)
+    return render_template("projectdetail.html", data=project_data)
 
 @app.route('/stars')
 def stars():
