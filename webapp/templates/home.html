@@ -11,10 +11,33 @@ background-image: url('https://images.unsplash.com/photo-1682685795557-976f03aca
 height: 100vh;
 ">
       <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
-          <div class="d-flex justify-content-center align-items-center h-100">
+          <div class="d-flex flex-column justify-content-center align-items-center h-100">
               <!-- <div class="text-white">
                   <a class="btn btn-outline-light btn-lg" href="#" role="button">Counting Stars</a>
               </div> -->
+
+
+              <!--새로 추가한 부분 시작-->
+
+              <!-- <div class="text-white">
+                <h1 class="mb-3">{{ session['website_name'] }}</h1>
+                <h4 class="mb-3">{{ session['tagline'] }}</h4>
+              </div> -->
+              <div class="profile_text text-white">
+                <i class="fas fa-user-astronaut"></i>
+                {% if name %}
+                <p>{{name}}님 환영합니다</p>
+                {%endif%}
+              </div>
+
+
+
+
+
+
+              <!--새로 추가한 부분 끝-->
+
+
               <form action="{{ url_for('search_my_lucky') }}" method="POST" class="input-group m-3 w-50">
                 <div class="form-outline">
                   <input type="search" id="form1" name="search_data" class="form-control text-white input-group-lg"/>

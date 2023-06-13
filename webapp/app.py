@@ -26,10 +26,34 @@ app = Flask(__name__)
 # session secret_key
 app.secret_key = 'fad62b7c1a6a9e67dbb66c3571a23ff2425650965f80047ea2fadce543b088cf'
 
+# #새로 추가 시작
+# def refreshSettingSessionData():
+#     setting_data = settings_col.find_one()
+#     session["website_name"] = setting_data["website_name"]
+#     session["tagline"] = setting_data["tagline"]
+# #새로 추가 끝
+
+
+
 
 # route here
 @app.route('/')
 def index():
+    user_email = session.get('user_email')
+    userData = user_info.find_one({"email": session.get('user_email')})
+    # # # #새로 추가 시작
+    if user_email:
+        return render_template("home.html", name=userData['name'])
+    
+    # if session.get('user_email'):
+    #     # _id_converted = ObjectId(id)
+    #     # search_filter = {"_id": _id_converted}
+    #     # userData = user_info.find_one(search_filter)
+    #     userData = user_info.find_one({"email": session.get('user_email')})
+    #     return render_template("home.html", userData=userData)
+
+
+    #새로 추가 끝
     return render_template("home.html")
 
 @app.route('/map')
